@@ -1,21 +1,12 @@
-package model.entity;
+package model.dto;
 
-import jakarta.persistence.*;
+public class EmployeeDto {
 
-@Entity
-@Table(name = "employees")
-public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType. IDENTITY)
-        private Long id;
-        private String empName;
-        private String empEmail;
-        private String empCode;
-        private String companyName;
-
-    public Employee() {
-
-    }
+    private Long id;
+    private String empName;
+    private String empEmail;
+    private String empCode;
+    private String companyName;
 
 
     public Long getId() {
@@ -58,15 +49,13 @@ public class Employee {
         this.companyName = companyName;
     }
 
-    public Employee(Long id, String empName, String empEmail, String empCode, String companyName) {
+    public EmployeeDto(Long id, String empName, String empEmail, String empCode, String companyName) {
         this.id = id;
         this.empName = empName;
         this.empEmail = empEmail;
         this.empCode = empCode;
         this.companyName = companyName;
     }
-
-
 
     @Override
     public String toString() {
@@ -78,5 +67,7 @@ public class Employee {
                 ", companyName='" + companyName + '\'' +
                 '}';
     }
-}
 
+    public EmployeeDto() {
+    }
+}
